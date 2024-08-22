@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - ReactJs
 - TypeScript
 - NodeJS
--TailwindCSS
+- TailwindCSS
 
 ## Projeto
 
