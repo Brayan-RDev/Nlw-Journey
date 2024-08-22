@@ -23,6 +23,8 @@ export function Guests() {
   async function addNewEmailToInvite(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
+    let emailExists = false
+
     const data = new FormData(event.currentTarget)
     const email = data.get('email')?.toString()
 
@@ -30,19 +32,24 @@ export function Guests() {
       return
     }
 
-    participants.map(participant =>{
-      if(participant.email === email) {
-        console.log('O email já existe')
+
+    participants.map(participant => {
+      if (participant.email === email) {
+        emailExists = true
       }
     })
 
-    event.currentTarget.reset()
+    if (!emailExists) {
+      event.currentTarget.reset()
 
-    await api.post(`/trips/${tripId}/invites`, {
-      email: email
-    })
+      await api.post(`/trips/${tripId}/invites`, {
+        email: email
+      })
 
-    window.document.location.reload()
+      window.document.location.reload()
+    }
+
+    else alert("O e-mail digitado já existe na lista de convidadaos! \nPor favor insira um e-mail que não exista na lista.")
   }
 
   function openManageGuestsModal() {
