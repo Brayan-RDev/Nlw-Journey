@@ -6,11 +6,6 @@
 Aplicação desenvolvida no NLW Journey da Rocketseat na trilha ReactJS e NodeJS.
 </p>
 
-
-<p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=18181B&labelColor=BEF264">
-</p>
-
 <br>
 
 <p align="center">
